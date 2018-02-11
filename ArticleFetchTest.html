@@ -1,0 +1,39 @@
+<html>
+   <!-- <script src="ArticleFetch.js" type="text/javascript" ></script> -->
+   <script
+   src="http://code.jquery.com/jquery-3.3.1.min.js"
+   integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+   crossorigin="anonymous"></script>
+   <script  type="text/javascript">
+    $(function() {
+        
+        $('#test').click(temp = function() {         
+            console.log("WOOHOO")
+            var url = "https://api.nytimes.com/svc/search/v2/articlesearch.json";
+            url += '?' + $.param({
+                'api-key': process.env.KEY,
+                'q': keyword,
+                'page': 0
+            });
+            $.ajax({
+                url: url,
+                method: 'GET',
+            }).done(function(result) {
+                console.log(result)
+                return result;
+            }).fail(function(err) {
+                throw err;
+            });
+        });
+        JSON.parse(temp);
+    });
+
+
+</script> 
+
+
+   
+   <body>
+        <button id="test">Click</button>
+    </body>
+</html>
