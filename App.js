@@ -1,29 +1,7 @@
 import React, { Component } from 'react'
 import { StyleSheet, Text, View, Image, AppRegistry, Button } from 'react-native';
 
-// export default class App extends React.Component {
-//   render() {
-//     return (
-//       <View style={styles.container}>
-//         <Text>My first App!</Text>
-//         <Text>Can't wait to make it cool.</Text>
-//         <Text>Bee-boop-beep.</Text>
-//       </View>
-//     );
-//   }
-// }
-
-// const styles = StyleSheet.create({
-//   container: {
-//     flex: 1,
-//     backgroundColor: '#fff',
-//     alignItems: 'center',
-//     justifyContent: 'center',
-//   },
-// });
-//--------------------------------
-// import React, { Component } from 'react'
-// import { AppRegistry, View, Text, StyleSheet, Image } from 'react-native'
+import SwipeCards from 'react-native-swipe-cards';
 
 class Counter extends Component {
 
@@ -47,47 +25,21 @@ class Counter extends Component {
   }
 }
 
-/// export default class product extends Component<{}> {
-//   render() {
-//     return (
-//       <View style={styles.container}>
-//         <Counter color={'lightblue'} size={16} />
-//         <Counter color={'skyblue'} size={32} />
-//         <Counter color={'steelblue'} size={80} />
-//         <Counter color={'darkblue'} size={140} />
-//       </View>
-//     )
-//   }
-// }
-
-// const styles = StyleSheet.create({
-//   container: {
-//     flex: 1,
-//     justifyContent: 'center',
-//     alignItems: 'center',
-//   },
-// })
-
-// AppRegistry.registerComponent('App', () => App)
-
-//---------------------------------
-
 export default class product extends Component<{}> {
   render() {
-    return (
+     return (
       <View style={styles2.container}>
       <Image
         style={styles1.image}
         source={{uri: 'http://www.reactnativeexpress.com/logo.png'}}/>
 
-        <Counter color={'lightblue'} size={16} />
-        <Counter color={'skyblue'} size={32} />
-        <Counter color={'steelblue'} size={80} />
-        <Counter color={'darkblue'} size={140} />
+        
+        <Counter color={'steelblue'} size={180} />
+
       
         <Button
           //onPress={onPressLearnMore}
-          title="Learn More"
+          title="Test Button"
           color="black"
           accessibilityLabel="Learn more about this purple button"
         />
@@ -99,8 +51,8 @@ export default class product extends Component<{}> {
 
 const styles1 = StyleSheet.create({
   image: {
-    width: 200,
-    height: 200,
+    width: 300,
+    height: 300,
   },
 })
 const styles2 = StyleSheet.create({
@@ -115,3 +67,92 @@ const styles2 = StyleSheet.create({
 
 AppRegistry.registerComponent('App', () => App)
 
+// SwipeCards.js
+// 'use strict';
+
+// import React, { Component } from 'react';
+// import {StyleSheet, Text, View, Image} from 'react-native';
+
+// import SwipeCards from 'react-native-swipe-cards';
+
+// class Card extends React.Component {
+//   constructor(props) {
+//     super(props);
+//   }
+
+//   render() {
+//     return (
+//       <View style={[styles.card, {backgroundColor: this.props.backgroundColor}]}>
+//         <Text>{this.props.text}</Text>
+//       </View>
+//     )
+//   }
+// }
+
+// class NoMoreCards extends Component {
+//   constructor(props) {
+//     super(props);
+//   }
+
+//   render() {
+//     return (
+//       <View>
+//         <Text style={styles.noMoreCardsText}>No more cards</Text>
+//       </View>
+//     )
+//   }
+// }
+
+// export default class extends React.Component {
+//   constructor(props) {
+//     super(props);
+//     this.state = {
+//       cards: [
+//         {text: 'Tomato', backgroundColor: 'red'},
+//         {text: 'Aubergine', backgroundColor: 'purple'},
+//         {text: 'Courgette', backgroundColor: 'green'},
+//         {text: 'Blueberry', backgroundColor: 'blue'},
+//         {text: 'Umm...', backgroundColor: 'cyan'},
+//         {text: 'orange', backgroundColor: 'orange'},
+//       ]
+//     };
+//   }
+
+//   handleYup (card) {
+//     console.log(`Yup for ${card.text}`)
+//   }
+//   handleNope (card) {
+//     console.log(`Nope for ${card.text}`)
+//   }
+//   handleMaybe (card) {
+//     console.log(`Maybe for ${card.text}`)
+//   }
+//   render() {
+//     // If you want a stack of cards instead of one-per-one view, activate stack mode
+//     // stack={true}
+//     return (
+//       <SwipeCards
+//         cards={this.state.cards}
+//         renderCard={(cardData) => <Card {...cardData} />}
+//         renderNoMoreCards={() => <NoMoreCards />}
+
+//         handleYup={this.handleYup}
+//         handleNope={this.handleNope}
+//         handleMaybe={this.handleMaybe}
+//         hasMaybeAction
+//       />
+//     )
+//   }
+// }
+
+// const styles = StyleSheet.create({
+//   card: {
+//     justifyContent: 'center',
+//     alignItems: 'center',
+//     width: 300,
+//     height: 300,
+//   },
+//   noMoreCardsText: {
+//     fontSize: 22,
+//   }
+// })
