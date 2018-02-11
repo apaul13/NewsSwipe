@@ -6,7 +6,7 @@ function call_API(keyword){
         url += '?' + $.param({
             'api-key': process.env.KEY,
             'q': keyword,
-            'page': 0
+            'page': 0 
             });
             $.ajax({
             url: url,
@@ -17,8 +17,9 @@ function call_API(keyword){
             throw err;
             });
         }
-    
-    );
+    )
+    var file = JSON.parse(JSON_file);
+    ;
     
 var JSON_file = call_API(keyword);
 
